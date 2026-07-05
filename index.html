@@ -677,6 +677,96 @@ footer{background:var(--black);color:rgba(255,255,255,0.7);padding:70px 0 30px;}
     letter-spacing: 1px;
   }
 }
+/* FIX RESPONSIVE GLOBAL */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 18px;
+    overflow-x: hidden;
+  }
+
+  .nav-inner {
+    width: 100%;
+    padding: 14px 18px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 26px;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .about-grid {
+    gap: 55px;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-photo img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-photo .badge {
+    right: 12px;
+    bottom: -35px;
+    width: auto;
+    max-width: calc(100% - 24px);
+    padding: 18px 22px;
+  }
+
+  .about-text h2 {
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    max-width: 100%;
+  }
+
+  .about-text p {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .chat-wrapper {
+    right: 18px;
+    bottom: 24px;
+  }
+
+  .back-top {
+    left: 18px;
+    bottom: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    font-size: 23px;
+  }
+
+  .theme-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-toggle-mobile {
+    font-size: 24px;
+  }
+
+  .about-text h2 {
+    font-size: 32px !important;
+  }
+}
+
 </style>
 </head>
 <body>
