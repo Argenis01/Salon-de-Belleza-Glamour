@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Salón de Belleza Glamour — Uñas de Lujo en Tehuantepec, Oaxaca</title>
+<meta name="description" content="Salón de Belleza Glamour: uñas acrílicas, gel semipermanente, nail art y diseños exclusivos en Santo Domingo Tehuantepec, Oaxaca. Agenda tu cita por WhatsApp." />
+<meta name="theme-color" content="#1B1614" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ivory:#FFFDF9;
+  --ivory-2:#FBF3EF;
+  --pink-pastel:#F7DEE4;
+  --pink-pastel-soft:#FCEFF1;
+  --rose:#D9A6A0;
+  --rose-deep:#C98B85;
+  --gold:#C9A24B;
+  --gold-light:#E8D2A0;
+  --black:#1B1614;
+  --black-soft:#2A211D;
+  --text:#3A2E29;
+  --text-soft:#7A6C64;
+  --radius:18px;
+  --radius-sm:10px;
+  --shadow:0 20px 45px -20px rgba(27,22,20,0.25);
+  --ff-display:'Cormorant Garamond', serif;
+  --ff-body:'Jost', sans-serif;
+  --wa-green:#25D366;
+  --bg: var(--ivory);
+  --bg-alt: var(--ivory-2);
+  --surface:#ffffff;
+  --border: rgba(27,22,20,0.08);
+}
+[data-theme="dark"]{
+  --bg:#1B1614;
+  --bg-alt:#221B18;
+  --surface:#241D1A;
+  --text:#F3E9E2;
+  --text-soft:#C9B8B0;
+  --border: rgba(255,255,255,0.08);
+  --shadow:0 20px 45px -20px rgba(0,0,0,0.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden;
+  transition:background .4s ease, color .4s ease;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+.container{max-width:1220px;margin:0 auto;padding:0 24px;}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:600;color:var(--text);letter-spacing:.3px;}
+
+/* ============ SIGNATURE: gold brushstroke divider ============ */
+.brush{
+  width:120px;height:18px;margin:14px auto 0;
+  background:no-repeat center / contain;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 30'><path d='M2 20 C 40 2, 70 28, 100 14 S 160 2, 198 16' stroke='%23C9A24B' stroke-width='4' fill='none' stroke-linecap='round'/></svg>");
+  opacity:.9;
+}
+.brush.left{margin:14px 0 0;}
+.eyebrow{
+  font-family:var(--ff-body);
+  font-size:12.5px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--rose-deep);
+  font-weight:500;
+}
+[data-theme="dark"] .eyebrow{color:var(--gold-light);}
+.section-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+.section-head h2{font-size:clamp(30px,4vw,46px);}
+.section{padding:110px 0;}
+.section.alt{background:var(--bg-alt);}
+
+/* ============ PRELOADER ============ */
+#preloader{
+  position:fixed;inset:0;z-index:9999;background:var(--black);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+#preloader.hide{opacity:0;visibility:hidden;}
+.preload-mark{font-family:var(--ff-display);font-size:34px;color:var(--ivory);letter-spacing:2px;}
+.preload-stroke{width:160px;height:6px;background:rgba(255,255,255,0.12);border-radius:6px;overflow:hidden;position:relative;}
+.preload-stroke::after{
+  content:'';position:absolute;left:-40%;top:0;bottom:0;width:40%;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent);
+  animation:sweep 1.3s ease-in-out infinite;
+}
+@keyframes sweep{0%{left:-40%;}100%{left:100%;}}
+
+/* ============ NAVBAR ============ */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,253,249,0.85);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:background .4s ease, border-color .4s ease;
+}
+[data-theme="dark"] header.nav{background:rgba(27,22,20,0.85);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1220px;margin:0 auto;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--ff-display);font-size:24px;letter-spacing:1px;color:var(--text);}
+.logo i{color:var(--gold);font-size:19px;}
+.logo b{font-weight:600;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{
+  font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-soft);
+  position:relative;padding:6px 0;transition:color .3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);
+  transition:width .3s ease;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-links a:hover::after{width:100%;}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.theme-toggle{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;color:var(--text);transition:.3s;
+}
+.theme-toggle:hover{border-color:var(--gold);color:var(--gold);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:40px;font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;
+  border:1px solid transparent;transition:all .35s ease;font-weight:500;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#241a08;box-shadow:0 10px 24px -10px rgba(201,162,75,0.6);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(201,162,75,0.75);}
+.btn-outline{border-color:var(--text);color:var(--text);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.btn-ghost-light{border-color:rgba(255,255,255,0.55);color:#fff;}
+.btn-ghost-light:hover{background:rgba(255,255,255,0.12);}
+.nav-toggle-mobile{display:none;background:none;border:none;font-size:22px;color:var(--text);}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1740&auto=format&fit=crop') center/cover;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(27,22,20,0.55), rgba(27,22,20,0.75) 60%, rgba(27,22,20,0.92));
+}
+.hero-parallax{will-change:transform;}
+.hero-content{position:relative;z-index:2;max-width:760px;padding:0 24px;color:#fff;}
+.hero-content .eyebrow{color:var(--gold-light);}
+.hero-content h1{
+  font-size:clamp(38px,6vw,68px);color:#fff;line-height:1.1;margin:18px 0 22px;
+}
+.hero-content h1 em{font-style:italic;color:var(--gold-light);}
+.hero-content p{font-size:17px;color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 38px;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.hero-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;
+  color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll .line{width:1px;height:34px;background:rgba(255,255,255,0.4);position:relative;overflow:hidden;}
+.hero-scroll .line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--gold-light);animation:scrolldown 1.8s ease-in-out infinite;}
+@keyframes scrolldown{0%{top:-100%;}50%{top:0;}100%{top:100%;}}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
+.about-photo{position:relative;}
+.about-photo img{border-radius:var(--radius);box-shadow:var(--shadow);}
+.about-photo .badge{
+  position:absolute;bottom:-24px;right:-24px;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:20px 26px;box-shadow:var(--shadow);text-align:center;
+}
+.about-photo .badge strong{display:block;font-family:var(--ff-display);font-size:32px;color:var(--gold);}
+.about-photo .badge span{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft);}
+.about-list{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;margin-top:32px;}
+.about-list li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--text-soft);}
+.nail-bullet{
+  flex-shrink:0;width:20px;height:20px;margin-top:2px;
+  background:no-repeat center/contain;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2c4 3 6 7 6 11a6 6 0 0 1-12 0c0-4 2-8 6-11z' fill='%23C9A24B'/></svg>");
+}
+.about-text p{color:var(--text-soft);font-size:15.5px;margin-bottom:18px;}
+
+/* ============ SERVICES ============ */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;}
+.service-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;
+}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+.service-thumb{height:190px;overflow:hidden;position:relative;}
+.service-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.service-card:hover .service-thumb img{transform:scale(1.08);}
+.service-icon{
+  position:absolute;bottom:-22px;left:24px;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#241a08;
+  display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 8px 18px -6px rgba(201,162,75,0.7);
+}
+.service-body{padding:36px 24px 26px;}
+.service-body h3{font-size:22px;margin-bottom:10px;}
+.service-body p{font-size:14px;color:var(--text-soft);margin-bottom:20px;min-height:44px;}
+.link-arrow{font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--rose-deep);display:inline-flex;align-items:center;gap:8px;font-weight:500;}
+[data-theme="dark"] .link-arrow{color:var(--gold-light);}
+.link-arrow i{transition:transform .3s;}
+.service-card:hover .link-arrow i{transform:translateX(5px);}
+
+/* ============ CATALOG ============ */
+.filters{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:46px;}
+.filter-btn{
+  padding:10px 22px;border-radius:30px;border:1px solid var(--border);background:var(--surface);
+  font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text-soft);transition:.3s;
+}
+.filter-btn.active,.filter-btn:hover{background:var(--black);color:var(--ivory);border-color:var(--black);}
+[data-theme="dark"] .filter-btn.active,[data-theme="dark"] .filter-btn:hover{background:var(--gold);color:#241a08;border-color:var(--gold);}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
+.catalog-item{
+  position:relative;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/5;cursor:pointer;
+  box-shadow:0 8px 20px -12px rgba(0,0,0,0.35);
+}
+.catalog-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.catalog-item:hover img{transform:scale(1.1);}
+.catalog-overlay{
+  position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,14,12,0.9));
+  display:flex;flex-direction:column;justify-content:flex-end;padding:18px;opacity:0;transition:opacity .35s ease;
+}
+.catalog-item:hover .catalog-overlay{opacity:1;}
+.catalog-overlay h4{color:#fff;font-size:19px;}
+.catalog-overlay span{color:var(--gold-light);font-size:12px;letter-spacing:1px;text-transform:uppercase;}
+.catalog-item.hidden{display:none;}
+
+/* Modal (catalog + generic) */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(20,14,12,0.72);backdrop-filter:blur(4px);z-index:2000;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--surface);border-radius:var(--radius);max-width:560px;width:100%;max-height:90vh;overflow-y:auto;
+  position:relative;box-shadow:var(--shadow);
+}
+.modal-close{
+  position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.35);
+  color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:2;font-size:15px;
+}
+.modal-img{width:100%;height:300px;object-fit:cover;}
+.modal-content-pad{padding:28px 30px 32px;}
+.modal-content-pad h3{font-size:26px;margin-bottom:8px;}
+.modal-content-pad p.desc{color:var(--text-soft);font-size:14.5px;margin-bottom:18px;}
+.modal-meta{display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap;}
+.modal-meta div span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);}
+.modal-meta div strong{font-family:var(--ff-display);font-size:22px;color:var(--gold);}
+
+/* ============ PRICING ============ */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;}
+.price-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:38px 30px;text-align:center;
+  transition:.4s;position:relative;
+}
+.price-card.featured{border-color:var(--gold);box-shadow:0 20px 50px -25px rgba(201,162,75,0.5);}
+.price-card.featured::before{
+  content:'Más solicitado';position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#241a08;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;font-weight:600;
+}
+.price-card:hover{transform:translateY(-6px);}
+.price-card i{font-size:26px;color:var(--gold);margin-bottom:14px;}
+.price-card h3{font-size:20px;margin-bottom:6px;}
+.price-card .amount{font-family:var(--ff-display);font-size:38px;color:var(--text);margin:14px 0 6px;}
+.price-card .amount span{font-size:14px;color:var(--text-soft);}
+.price-note{text-align:center;color:var(--text-soft);font-size:13.5px;margin-top:36px;font-style:italic;}
+
+/* ============ WHY US ============ */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+.why-item{text-align:center;padding:20px;}
+.why-icon{
+  width:66px;height:66px;border-radius:50%;background:var(--pink-pastel);color:var(--rose-deep);
+  display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;
+}
+[data-theme="dark"] .why-icon{background:rgba(201,162,75,0.15);color:var(--gold-light);}
+.why-item h4{font-size:19px;margin-bottom:8px;}
+.why-item p{font-size:13.5px;color:var(--text-soft);}
+
+/* ============ GALLERY MASONRY ============ */
+.masonry{column-count:4;column-gap:16px;}
+.masonry .m-item{break-inside:avoid;margin-bottom:16px;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;position:relative;}
+.masonry .m-item img{width:100%;display:block;transition:transform .6s ease, filter .4s ease;}
+.masonry .m-item:hover img{transform:scale(1.06);}
+.masonry .m-item::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;color:#fff;
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:rgba(20,14,12,0.35);opacity:0;transition:opacity .3s;}
+.masonry .m-item:hover::after{opacity:1;}
+
+/* ============ TESTIMONIALS ============ */
+.testi-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:36px 30px;text-align:center;margin:10px;
+}
+.testi-stars{color:var(--gold);margin-bottom:16px;font-size:14px;}
+.testi-card p.quote{font-size:15.5px;color:var(--text-soft);margin-bottom:22px;font-style:italic;}
+.testi-user{display:flex;align-items:center;justify-content:center;gap:12px;}
+.testi-user img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-light);}
+.testi-user strong{display:block;font-size:14px;}
+.testi-user span{font-size:12px;color:var(--text-soft);}
+.swiper{padding-bottom:50px;}
+.swiper-pagination-bullet{background:var(--gold);opacity:.4;}
+.swiper-pagination-bullet-active{opacity:1;}
+
+/* ============ LOCATION ============ */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;}
+.location-info{
+  background:var(--black);color:var(--ivory);border-radius:var(--radius);padding:46px 40px;display:flex;flex-direction:column;justify-content:center;
+}
+.location-info .eyebrow{color:var(--gold-light);}
+.location-info h3{color:#fff;font-size:30px;margin:12px 0 18px;}
+.location-info p{color:rgba(255,255,255,0.75);font-size:14.5px;margin-bottom:6px;}
+.location-info .btn{margin-top:26px;align-self:flex-start;}
+.map-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:340px;}
+.map-frame iframe{width:100%;height:100%;min-height:340px;border:0;}
+
+/* ============ CONTACT ============ */
+.contact-box{
+  background:linear-gradient(135deg, var(--rose) 0%, var(--gold) 130%);border-radius:var(--radius);
+  padding:64px 40px;text-align:center;color:#241a08;position:relative;overflow:hidden;
+}
+.contact-box::before{
+  content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,0.35),transparent 40%);
+}
+.contact-box h2{color:#241a08;position:relative;}
+.contact-box p{position:relative;max-width:520px;margin:14px auto 30px;color:rgba(36,26,8,0.8);}
+.contact-socials{display:flex;gap:16px;justify-content:center;margin-top:26px;position:relative;}
+.contact-socials a{width:44px;height:44px;border-radius:50%;background:rgba(36,26,8,0.12);display:flex;align-items:center;justify-content:center;color:#241a08;transition:.3s;}
+.contact-socials a:hover{background:#241a08;color:var(--gold-light);}
+
+/* ============ FOOTER ============ */
+footer{background:var(--black);color:rgba(255,255,255,0.7);padding:70px 0 30px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px;}
+.footer-logo{font-family:var(--ff-display);font-size:26px;color:#fff;margin-bottom:14px;}
+.footer-grid p{font-size:13.5px;line-height:1.8;}
+.footer-grid h5{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+.footer-grid ul li{margin-bottom:10px;font-size:13.5px;}
+.footer-grid ul li a:hover{color:var(--gold-light);}
+.footer-socials{display:flex;gap:12px;margin-top:16px;}
+.footer-socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;transition:.3s;}
+.footer-socials a:hover{background:var(--gold);color:#241a08;border-color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;}
+.footer-bottom a{color:rgba(255,255,255,0.6);}
+.footer-bottom a:hover{color:var(--gold-light);}
+
+/* ============ FLOATING BUTTONS ============ */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;width:60px;height:60px;border-radius:50%;background:var(--wa-green);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;z-index:900;
+  box-shadow:0 10px 24px -8px rgba(37,211,102,0.6);transition:transform .3s;
+}
+.wa-float:hover{transform:scale(1.1);}
+
+/* CORREGIDO: Añadido fixed, z-index superior, ancho y centrado limpio */
+.back-top{
+  position: fixed; /* Mantiene el botón flotando sobre la pantalla sin mover el diseño */
+  bottom: 28px;
+  left: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--black);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 990; /* Asegura que se dibuje por encima de las secciones */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .35s;
+  border: none;
+  cursor: pointer;
+}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* MEDIDA EXTRA DE SEGURIDAD PARA CONTENEDOR DE SWIPER */
+.swiper {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .about-grid,.location-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .masonry{column-count:3;}
+}
+@media (max-width:768px){
+  .nav-links{position:fixed;top:73px;left:0;right:0;background:var(--surface);flex-direction:column;
+    padding:24px;gap:18px;border-bottom:1px solid var(--border);transform:translateY(-130%);transition:.4s;}
+  .nav-links.open{transform:translateY(0);}
+  .nav-toggle-mobile{display:block;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .footer-grid{grid-template-columns:1fr;text-align:left;}
+  .masonry{column-count:2;}
+  .section{padding:76px 0;}
+}
+@media (max-width:480px){
+  .about-list{grid-template-columns:1fr;}
+  .masonry{column-count:1;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+
+/* ============ CHATBOT STYLES ============ */
+.chat-wrapper {
+  position: fixed;
+  bottom: 28px; /* Ocupa el lugar exacto del botón de WhatsApp */
+  right: 28px;
+  z-index: 950;
+  font-family: var(--ff-body);
+}
+
+/* Botón flotante principal */
+.chat-trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--black), var(--black-soft));
+  color: var(--gold-light);
+  border: 1px solid var(--border);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, background 0.3s;
+  position: relative;
+}
+[data-theme="dark"] .chat-trigger {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #241a08;
+}
+.chat-trigger:hover {
+  transform: scale(1.1);
+}
+.chat-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--rose-deep);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Ventana de chat */
+.chat-window {
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 340px;
+  height: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.chat-window.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Encabezado */
+.chat-header {
+  background: var(--black);
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+[data-theme="dark"] .chat-header {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.chat-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+}
+.chat-info h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.chat-info span {
+  font-size: 11px;
+  color: var(--gold-light);
+  display: block;
+}
+.chat-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  transition: color 0.2s;
+}
+.chat-close:hover { color: #fff; }
+
+/* Cuerpo de mensajes */
+.chat-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg-alt);
+}
+.chat-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.chat-msg.bot {
+  background: var(--surface);
+  color: var(--text);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+  border: 1px solid var(--border);
+}
+.chat-msg.user {
+  background: var(--gold);
+  color: #241a08;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+/* Opciones rápidas (Botones) */
+.chat-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-self: flex-start;
+  width: 90%;
+  margin-top: 4px;
+}
+.chat-opt-btn {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  text-align: left;
+  transition: all 0.2s;
+}
+.chat-opt-btn:hover {
+  background: var(--gold);
+  color: #241a08;
+}
+
+/* Input y barra de envío */
+.chat-footer {
+  padding: 12px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+}
+.chat-footer input {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 24px;
+  font-size: 13.5px;
+  outline: none;
+}
+.chat-footer button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gold);
+  color: #241a08;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+.chat-footer button:hover { transform: scale(1.05); }
+
+@media (max-width: 480px) {
+  .chat-window {
+    width: 290px;
+    height: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preload-mark">Glamour</div>
+  <div class="preload-stroke"></div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="logo"><i class="fa-solid fa-gem"></i><b>Glamour</b>&nbsp;Nails</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#precios">Precios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto" class="btn btn-gold" style="padding:10px 22px;">Agenda tu cita</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-toggle-mobile" id="mobileToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <span class="eyebrow">Salón de Belleza Glamour</span>
+    <h1>Realza tu belleza con<br><em>diseños únicos</em></h1>
+    <p>En Salón de Belleza Glamour transformamos tus uñas en verdaderas obras de arte, con la elegancia y el cuidado que mereces.</p>
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="https://wa.me/529711687042?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Sal%C3%B3n%20de%20Belleza%20Glamour." target="_blank"><i class="fa-brands fa-whatsapp"></i> Agenda por WhatsApp</a>
+      <a class="btn btn-ghost-light" href="#catalogo"><i class="fa-solid fa-images"></i> Ver catálogo</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Descubre</span><div class="line"></div></div>
+</section>
+
+<!-- ================= SOBRE NOSOTROS ================= -->
+<section class="section" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-photo" data-aos="fade-right">
+      <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=1000&auto=format&fit=crop" alt="Interior del Salón de Belleza Glamour" />
+      <div class="badge"><strong>+5</strong><span>Años de experiencia</span></div>
+    </div>
+    <div class="about-text" data-aos="fade-left">
+      <span class="eyebrow">Sobre nosotros</span>
+      <h2 style="font-size:38px;margin:12px 0 20px;">Un espacio pensado para hacerte sentir especial</h2>
+      <p>Somos un salón dedicado al arte de las uñas, donde cada detalle se cuida con precisión: desde la higiene de nuestros instrumentos hasta la calidad de cada producto que usamos en tus manos.</p>
+      <p>Nuestro equipo combina años de experiencia con una pasión genuina por la creatividad, para que cada visita se sienta como un pequeño ritual de belleza, no solo un servicio más.</p>
+      <ul class="about-list">
+        <li><span class="nail-bullet"></span>Atención personalizada</li>
+        <li><span class="nail-bullet"></span>Higiene garantizada</li>
+        <li><span class="nail-bullet"></span>Productos profesionales</li>
+        <li><span class="nail-bullet"></span>Calidad en cada detalle</li>
+        <li><span class="nail-bullet"></span>Creatividad sin límites</li>
+        <li><span class="nail-bullet"></span>Amor por lo que hacemos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="section alt" id="servicios">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Lo que hacemos</span>
+      <h2>Nuestros Servicios</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="cards-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CATÁLOGO ================= -->
+<section class="section" id="catalogo">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Inspírate</span>
+      <h2>Catálogo de Diseños</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="filters" id="catalogFilters"></div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- ================= PRECIOS ================= -->
+<section class="section alt" id="precios">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Inversión en ti</span>
+      <h2>Precios</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="price-grid" id="priceGrid"></div>
+    <p class="price-note">Los precios pueden variar dependiendo de la complejidad del diseño.</p>
+  </div>
+</section>
+
+<!-- ================= POR QUÉ ELEGIRNOS ================= -->
+<section class="section" id="porque">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Nuestro compromiso</span>
+      <h2>¿Por qué elegirnos?</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="section alt" id="galeria">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Momentos Glamour</span>
+      <h2>Galería</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="masonry" id="masonryGrid"></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section class="section" id="testimonios">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="eyebrow">Lo que dicen de nosotras</span>
+      <h2>Testimonios</h2>
+      <div class="brush"></div>
+    </div>
+    <div class="swiper" id="testiSwiper">
+      <div class="swiper-wrapper" id="testiWrapper"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UBICACIÓN ================= -->
+<section class="section alt" id="ubicacion">
+  <div class="container location-grid">
+    <div class="location-info" data-aos="fade-right">
+      <span class="eyebrow">Visítanos</span>
+      <h3>Nuestra Ubicación</h3>
+      <p><i class="fa-solid fa-location-dot" style="color:var(--gold-light);margin-right:8px;"></i>Santo Domingo Tehuantepec, Oaxaca, México, C.P. 70760</p>
+      <p><i class="fa-solid fa-clock" style="color:var(--gold-light);margin-right:8px;"></i>Lun – Sáb: 9:00 am – 7:00 pm</p>
+      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Santo+Domingo+Tehuantepec+Oaxaca+70760" target="_blank"><i class="fa-solid fa-diamond-turn-right"></i> Cómo llegar</a>
+    </div>
+    <div class="map-frame" data-aos="fade-left">
+      <iframe src="https://www.google.com/maps?q=Santo%20Domingo%20Tehuantepec%2C%20Oaxaca%2C%20M%C3%A9xico%2070760&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="contact-box" data-aos="zoom-in">
+      <span class="eyebrow" style="color:#241a08;">Reserva tu momento Glamour</span>
+      <h2>¿Lista para lucir uñas de ensueño?</h2>
+      <p>Escríbenos por WhatsApp y agenda tu cita en minutos. Con gusto resolvemos tus dudas y te ayudamos a elegir el diseño perfecto.</p>
+      <a class="btn" style="background:#241a08;color:var(--gold-light);" href="https://wa.me/529711687042?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Sal%C3%B3n%20de%20Belleza%20Glamour." target="_blank"><i class="fa-brands fa-whatsapp"></i> Enviar mensaje por WhatsApp</a>
+      <div class="contact-socials">
+        <a href="https://wa.me/529711687042" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1FNiTc6czi/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="tel:+529711687042" aria-label="Teléfono"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Glamour Nails</div>
+        <p>Transformamos tus uñas en verdaderas obras de arte, con productos de calidad y una atención pensada para ti.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/529711687042" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/share/1FNiTc6czi/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Horario</h5>
+        <ul>
+          <li>Lunes – Viernes: 9:00 am – 7:00 pm</li>
+          <li>Sábado: 9:00 am – 6:00 pm</li>
+          <li>Domingo: Cerrado</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><i class="fa-solid fa-phone" style="margin-right:8px;color:var(--gold-light);"></i>971 168 7042</li>
+          <li><i class="fa-solid fa-location-dot" style="margin-right:8px;color:var(--gold-light);"></i>Sto. Domingo Tehuantepec, Oaxaca, 70760</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Salón de Belleza Glamour. Todos los derechos reservados.</span>
+      <a href="#" id="privacyLink">Aviso de privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING BUTTONS ================= -->
+<!-- ================= FLOATING BUTTONS ================= -->
+<!-- El chatbot ahora ocupa el lugar del botón de WhatsApp -->
+<div class="chat-wrapper">
+  <!-- Botón Lanzador del Chat -->
+  <button class="chat-trigger" id="chatTrigger" aria-label="Abrir chat de asistencia">
+    <i class="fa-solid fa-comments"></i>
+    <span class="chat-badge">1</span>
+  </button>
+
+  <!-- Ventana del Chatbot -->
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">
+        <i class="fa-solid fa-gem"></i>
+      </div>
+      <div class="chat-info">
+        <h4>Asistente Glamour</h4>
+        <span>En línea — Respuesta inmediata</span>
+      </div>
+      <button class="chat-close" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+      <!-- Los mensajes se generan dinámicamente con JS -->
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" id="chatInput" placeholder="Escribe tu duda aquí..." autocomplete="off" />
+      <button id="chatSendBtn" aria-label="Enviar mensaje"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Mantén el botón de volver arriba intacto -->
+<button class="back-top" id="backTop" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ================= MODAL: CATÁLOGO / SERVICIO ================= -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+    <img class="modal-img" id="modalImg" src="" alt="" />
+    <div class="modal-content-pad">
+      <h3 id="modalTitle"></h3>
+      <p class="desc" id="modalDesc"></p>
+      <div class="modal-meta">
+        <div><span>Tiempo aprox.</span><strong id="modalTime"></strong></div>
+        <div><span>Precio</span><strong id="modalPrice"></strong></div>
+      </div>
+      <a class="btn btn-gold" id="modalWaBtn" target="_blank" style="width:100%;justify-content:center;"><i class="fa-brands fa-whatsapp"></i> Solicitar este diseño</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: PRIVACIDAD ================= -->
+<div class="modal-overlay" id="privacyOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="privacyClose"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-content-pad" style="padding-top:40px;">
+      <h3>Aviso de Privacidad</h3>
+      <p class="desc">En Salón de Belleza Glamour, tus datos de contacto (nombre y teléfono) se utilizan únicamente para agendar y confirmar tu cita. No compartimos tu información con terceros ni la usamos con fines distintos al servicio solicitado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= LIGHTBOX GALERÍA ================= -->
+<div class="modal-overlay" id="lightboxOverlay" style="background:rgba(10,7,6,0.92);">
+  <button class="modal-close" id="lightboxClose" style="top:26px;right:26px;"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:88vh;object-fit:contain;border-radius:12px;" />
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script>
+/* ============================================================
+   DATA
+============================================================ */
+const WA_NUMBER = "529711687042";
+
+const SERVICIOS = [
+  {icon:"fa-hand-sparkles", nombre:"Uñas Acrílicas", desc:"Estructura resistente y duradera, lista para cualquier diseño.", img:"https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-droplet", nombre:"Gel Semipermanente", desc:"Brillo intenso y larga duración sin dañar tu uña natural.", img:"https://images.unsplash.com/photo-1632344004316-d3927c368acb?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-layer-group", nombre:"Rubber Base", desc:"Base flexible que protege y fortalece tus uñas naturales.", img:"https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-wand-magic-sparkles", nombre:"Polygel", desc:"Ligero, resistente y con un acabado natural impecable.", img:"https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-gem", nombre:"Esculpidas", desc:"Extensión precisa para el largo y forma que siempre soñaste.", img:"https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-hand", nombre:"Manicure", desc:"Cuidado completo de cutícula y uña para un acabado impecable.", img:"https://images.unsplash.com/photo-1610171884955-08e1f4753e3f?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-shoe-prints", nombre:"Pedicure", desc:"Relajación y cuidado para pies suaves y hermosos.", img:"https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-rotate", nombre:"Retoque", desc:"Mantén tu diseño impecable entre cada visita.", img:"https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-eraser", nombre:"Retiro de Uñas", desc:"Retiro seguro y cuidadoso, sin dañar tu uña natural.", img:"https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-paintbrush", nombre:"Decoraciones", desc:"Detalles delicados que hacen únicas tus uñas.", img:"https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-palette", nombre:"Nail Art", desc:"Diseños artísticos hechos a mano, tan únicos como tú.", img:"https://images.unsplash.com/photo-1632344004316-d3927c368acb?q=80&w=800&auto=format&fit=crop"},
+  {icon:"fa-star", nombre:"Cristales", desc:"Brillo y elegancia con cristales de alta calidad.", img:"https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=800&auto=format&fit=crop"},
+];
+
+const CATALOGO = [
+  {cat:"elegantes", nombre:"Elegancia Clásica", img:"https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=700&auto=format&fit=crop", desc:"Francesa fina combinada con un toque dorado, perfecta para ocasiones especiales.", tiempo:"1h 30min", precio:350},
+  {cat:"naturales", nombre:"Natural Glow", img:"https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=700&auto=format&fit=crop", desc:"Tono nude con acabado suave, ideal para el día a día.", tiempo:"1h", precio:280},
+  {cat:"con-brillo", nombre:"Baby Boomer Glam", img:"https://images.unsplash.com/photo-1632344004316-d3927c368acb?q=80&w=700&auto=format&fit=crop", desc:"Degradado suave con acabado perlado y brillo sutil.", tiempo:"1h 45min", precio:400},
+  {cat:"con-piedras", nombre:"Rose Crystal", img:"https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=700&auto=format&fit=crop", desc:"Diseño en rosa palo con cristales aplicados a mano.", tiempo:"2h", precio:450},
+  {cat:"minimalistas", nombre:"Minimal Lines", img:"https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=700&auto=format&fit=crop", desc:"Líneas finas doradas sobre base nude, diseño minimalista.", tiempo:"1h 15min", precio:320},
+  {cat:"largas", nombre:"Long Luxe", img:"https://images.unsplash.com/photo-1610171884955-08e1f4753e3f?q=80&w=700&auto=format&fit=crop", desc:"Extensión larga en almendra con efecto espejo.", tiempo:"2h 15min", precio:480},
+  {cat:"cortas", nombre:"Short & Chic", img:"https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=700&auto=format&fit=crop", desc:"Forma corta cuadrada, cómoda y elegante.", tiempo:"1h", precio:270},
+  {cat:"navidad", nombre:"Magia Navideña", img:"https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=700&auto=format&fit=crop", desc:"Rojo y dorado con detalles festivos hechos a mano.", tiempo:"1h 45min", precio:400},
+  {cat:"san-valentin", nombre:"Corazón de Rosa", img:"https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=700&auto=format&fit=crop", desc:"Rosa pastel con pequeños corazones delineados a mano.", tiempo:"1h 30min", precio:380},
+  {cat:"personalizados", nombre:"A tu Medida", img:"https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=700&auto=format&fit=crop", desc:"Cuéntanos tu idea y la creamos juntas, 100% personalizado.", tiempo:"Variable", precio:"Cotización"},
+];
+
+const FILTROS = [
+  {key:"todos", label:"Todos"},
+  {key:"naturales", label:"Naturales"},
+  {key:"elegantes", label:"Elegantes"},
+  {key:"minimalistas", label:"Minimalistas"},
+  {key:"largas", label:"Largas"},
+  {key:"cortas", label:"Cortas"},
+  {key:"con-piedras", label:"Con piedras"},
+  {key:"con-brillo", label:"Con brillo"},
+  {key:"navidad", label:"Navidad"},
+  {key:"san-valentin", label:"San Valentín"},
+  {key:"personalizados", label:"Personalizados"},
+];
+
+const PRECIOS = [
+  {icon:"fa-hand-sparkles", nombre:"Uñas Acrílicas", desde:280, featured:false},
+  {icon:"fa-droplet", nombre:"Gel Semipermanente", desde:220, featured:true},
+  {icon:"fa-hand", nombre:"Manicure", desde:150, featured:false},
+  {icon:"fa-shoe-prints", nombre:"Pedicure", desde:180, featured:false},
+  {icon:"fa-crown", nombre:"Diseños Premium", desde:400, featured:false},
+  {icon:"fa-paintbrush", nombre:"Decoraciones", desde:50, featured:false},
+];
+
+const WHY = [
+  {icon:"fa-award", title:"Materiales de calidad", text:"Solo usamos productos profesionales certificados."},
+  {icon:"fa-couch", title:"Ambiente cómodo", text:"Un espacio pensado para relajarte y disfrutar."},
+  {icon:"fa-heart", title:"Atención personalizada", text:"Cada clienta recibe un trato único y cercano."},
+  {icon:"fa-gem", title:"Diseños exclusivos", text:"Creatividad que no encontrarás en otro lugar."},
+  {icon:"fa-clock", title:"Puntualidad", text:"Respetamos tu tiempo, siempre."},
+  {icon:"fa-pump-soap", title:"Higiene garantizada", text:"Instrumentos esterilizados en cada servicio."},
+];
+
+const GALERIA = [
+  "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1632344004316-d3927c368acb?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610171884955-08e1f4753e3f?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=500&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=500&auto=format&fit=crop",
+];
+
+const TESTIMONIOS = [
+  {nombre:"Ana López", texto:"El mejor salón al que he ido. La atención es súper personalizada y mis uñas duraron impecables casi un mes.", avatar:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"},
+  {nombre:"María Fernanda", texto:"Ambiente hermoso y muy limpio. Salí sintiéndome como toda una reina, totalmente recomendado.", avatar:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"},
+  {nombre:"Karla Ruiz", texto:"Los diseños personalizados quedaron exactamente como los imaginé. ¡Ya tengo mi próxima cita agendada!", avatar:"https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop"},
+  {nombre:"Daniela Sánchez", texto:"Puntualidad y profesionalismo desde que entras. Se nota el amor por los detalles en cada servicio.", avatar:"https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=200&auto=format&fit=crop"},
+];
+
+/* ============================================================
+   RENDER
+============================================================ */
+function money(v){ return typeof v === "number" ? `$${v}` : v; }
+
+function renderServicios(){
+  const grid = document.getElementById("servicesGrid");
+  grid.innerHTML = SERVICIOS.map((s,i)=>`
+    <div class="service-card" data-aos="fade-up" data-aos-delay="${(i%3)*80}">
+      <div class="service-thumb">
+        <img src="${s.img}" alt="${s.nombre}">
+        <div class="service-icon"><i class="fa-solid ${s.icon}"></i></div>
+      </div>
+      <div class="service-body">
+        <h3>${s.nombre}</h3>
+        <p>${s.desc}</p>
+        <a class="link-arrow" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hola, me interesa el servicio de "+s.nombre+" en Salón de Belleza Glamour.")}" target="_blank">Solicitar <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderFiltros(){
+  const box = document.getElementById("catalogFilters");
+  box.innerHTML = FILTROS.map((f,i)=>`<button class="filter-btn ${i===0?"active":""}" data-filter="${f.key}">${f.label}</button>`).join("");
+  box.querySelectorAll(".filter-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      box.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      filtrarCatalogo(btn.dataset.filter);
+    });
+  });
+}
+
+function renderCatalogo(){
+  const grid = document.getElementById("catalogGrid");
+  grid.innerHTML = CATALOGO.map((d,i)=>`
+    <div class="catalog-item" data-cat="${d.cat}" data-index="${i}" data-aos="fade-up" data-aos-delay="${(i%4)*70}">
+      <img src="${d.img}" alt="${d.nombre}">
+      <div class="catalog-overlay">
+        <h4>${d.nombre}</h4>
+        <span>${money(d.precio)}</span>
+      </div>
+    </div>
+  `).join("");
+  grid.querySelectorAll(".catalog-item").forEach(item=>{
+    item.addEventListener("click",()=>openCatalogModal(CATALOGO[item.dataset.index]));
+  });
+}
+
+function filtrarCatalogo(cat){
+  document.querySelectorAll(".catalog-item").forEach(item=>{
+    item.classList.toggle("hidden", cat!=="todos" && item.dataset.cat!==cat);
+  });
+}
+
+function renderPrecios(){
+  const grid = document.getElementById("priceGrid");
+  grid.innerHTML = PRECIOS.map(p=>`
+    <div class="price-card ${p.featured?"featured":""}" data-aos="fade-up">
+      <i class="fa-solid ${p.icon}"></i>
+      <h3>${p.nombre}</h3>
+      <div class="amount">${money(p.desde)}<span> desde</span></div>
+      <a class="btn btn-outline" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hola, me gustaría más información sobre "+p.nombre+".")}" target="_blank">Consultar</a>
+    </div>
+  `).join("");
+}
+
+function renderWhy(){
+  const grid = document.getElementById("whyGrid");
+  grid.innerHTML = WHY.map(w=>`
+    <div class="why-item" data-aos="zoom-in">
+      <div class="why-icon"><i class="fa-solid ${w.icon}"></i></div>
+      <h4>${w.title}</h4>
+      <p>${w.text}</p>
+    </div>
+  `).join("");
+}
+
+function renderGaleria(){
+  const grid = document.getElementById("masonryGrid");
+  grid.innerHTML = GALERIA.map((src,i)=>`
+    <div class="m-item" data-index="${i}" data-aos="fade-up" data-aos-delay="${(i%5)*60}">
+      <img src="${src}" alt="Diseño de uñas ${i+1}" loading="lazy">
+    </div>
+  `).join("");
+  grid.querySelectorAll(".m-item").forEach(item=>{
+    item.addEventListener("click",()=>openLightbox(GALERIA[item.dataset.index]));
+  });
+}
+
+function renderTestimonios(){
+  const wrap = document.getElementById("testiWrapper");
+  wrap.innerHTML = TESTIMONIOS.map(t=>`
+    <div class="swiper-slide">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"${t.texto}"</p>
+        <div class="testi-user">
+          <img src="${t.avatar}" alt="${t.nombre}">
+          <div style="text-align:left;">
+            <strong>${t.nombre}</strong>
+            <span>Clienta Glamour</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  new Swiper("#testiSwiper", {
+    slidesPerView:1,
+    spaceBetween:24,
+    loop:true,
+    autoplay:{delay:4500, disableOnInteraction:false},
+    pagination:{el:".swiper-pagination", clickable:true},
+    breakpoints:{768:{slidesPerView:2}, 1100:{slidesPerView:3}}
+  });
+}
+
+/* ============================================================
+   MODALS
+============================================================ */
+const modalOverlay = document.getElementById("modalOverlay");
+function openCatalogModal(d){
+  document.getElementById("modalImg").src = d.img;
+  document.getElementById("modalTitle").innerText = d.nombre;
+  document.getElementById("modalDesc").innerText = d.desc;
+  document.getElementById("modalTime").innerText = d.tiempo;
+  document.getElementById("modalPrice").innerText = money(d.precio);
+  document.getElementById("modalWaBtn").href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hola, me interesa el diseño \""+d.nombre+"\" del catálogo. ¿Podrían darme más información?")}`;
+  modalOverlay.classList.add("open");
+}
+document.getElementById("modalClose").addEventListener("click",()=>modalOverlay.classList.remove("open"));
+modalOverlay.addEventListener("click",e=>{ if(e.target===modalOverlay) modalOverlay.classList.remove("open"); });
+
+const privacyOverlay = document.getElementById("privacyOverlay");
+document.getElementById("privacyLink").addEventListener("click",e=>{ e.preventDefault(); privacyOverlay.classList.add("open"); });
+document.getElementById("privacyClose").addEventListener("click",()=>privacyOverlay.classList.remove("open"));
+privacyOverlay.addEventListener("click",e=>{ if(e.target===privacyOverlay) privacyOverlay.classList.remove("open"); });
+
+const lightboxOverlay = document.getElementById("lightboxOverlay");
+function openLightbox(src){
+  document.getElementById("lightboxImg").src = src;
+  lightboxOverlay.classList.add("open");
+}
+document.getElementById("lightboxClose").addEventListener("click",()=>lightboxOverlay.classList.remove("open"));
+lightboxOverlay.addEventListener("click",e=>{ if(e.target===lightboxOverlay) lightboxOverlay.classList.remove("open"); });
+
+/* ============================================================
+   NAV / THEME / SCROLL BEHAVIOR
+============================================================ */
+const mobileToggle = document.getElementById("mobileToggle");
+const navLinks = document.getElementById("navLinks");
+mobileToggle.addEventListener("click",()=>navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")));
+
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+function setTheme(t){
+  root.setAttribute("data-theme", t);
+  themeToggle.innerHTML = t === "dark" ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+  try{ localStorage.setItem("glamour-theme", t); }catch(e){}
+}
+let savedTheme = "light";
+try{ savedTheme = localStorage.getItem("glamour-theme") || "light"; }catch(e){}
+setTheme(savedTheme);
+themeToggle.addEventListener("click",()=>{
+  setTheme(root.getAttribute("data-theme")==="dark" ? "light" : "dark");
+});
+
+const backTop = document.getElementById("backTop");
+window.addEventListener("scroll",()=>{
+  backTop.classList.toggle("show", window.scrollY > 500);
+  const bg = document.getElementById("heroBg");
+  if(window.scrollY < window.innerHeight){
+    bg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+  }
+});
+backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+document.getElementById("year").innerText = new Date().getFullYear();
+
+window.addEventListener("load",()=>{
+  document.getElementById("preloader").classList.add("hide");
+});
+
+/* ============================================================
+   INIT
+============================================================ */
+renderServicios();
+renderFiltros();
+renderCatalogo();
+renderPrecios();
+renderWhy();
+renderGaleria();
+renderTestimonios();
+AOS.init({ duration:800, once:true, easing:"ease-out-cubic" });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chatTrigger = document.getElementById("chatTrigger");
+  const chatWindow = document.getElementById("chatWindow");
+  const chatCloseBtn = document.getElementById("chatCloseBtn");
+  const chatBody = document.getElementById("chatBody");
+  const chatInput = document.getElementById("chatInput");
+  const chatSendBtn = document.getElementById("chatSendBtn");
+  const chatBadge = chatTrigger.querySelector(".chat-badge");
+
+  const botKnowledge = {
+    welcome: "¡Hola! Bienvenido al asistente de Salón de Belleza Glamour. ✨ ¿En qué puedo ayudarte hoy?",
+    options: [
+      { text: "💅 Ver servicios y precios", key: "servicios" },
+      { text: "⏰ Horarios de atención", key: "horarios" },
+      { text: "📍 Ubicación del salón", key: "ubicacion" },
+      { text: "📅 ¿Cómo agendar cita?", key: "cita" }
+    ],
+    responses: {
+      servicios: "Ofrecemos aplicación de uñas acrílicas, gel semipermanente, nail art y diseños exclusivos. Puedes consultar los costos detallados directamente subiendo un poco en nuestra sección de 'Precios'. El costo final puede variar según la complejidad del diseño.",
+      horarios: "Nuestro horario es de Lunes a Sábado de 9:00 am a 7:00 pm. Los domingos permanecemos cerrado. ¡Te recomendamos agendar con anticipación!",
+      ubicacion: "Nos encontramos ubicados en Santo Domingo Tehuantepec, Oaxaca, México, C.P. 70760. ¡Puedes usar el mapa de la sección de ubicación para trazar tu ruta exacta!",
+      cita: "Para agendar tu cita de manera inmediata, puedes dar clic en cualquiera de los botones de WhatsApp de la página o enviarnos un mensaje directo al número 971 168 7042.",
+      fallback: "Disculpa, no logré entender por completo tu pregunta. Puedes intentar consultando sobre nuestros 'servicios', 'horarios', 'ubicación' o directamente dar clic en 'Agenda tu cita' para atenderte por WhatsApp."
+    }
+  };
+
+  chatTrigger.addEventListener("click", () => {
+    chatWindow.classList.toggle("open");
+    if(chatBadge) chatBadge.remove(); 
+    if(chatWindow.classList.contains("open") && chatBody.children.length === 0) {
+      initChat();
+    }
+  });
+
+  chatCloseBtn.addEventListener("click", () => {
+    chatWindow.classList.remove("open");
+  });
+
+  function initChat() {
+    appendMessage(botKnowledge.welcome, "bot");
+    appendOptions(botKnowledge.options);
+  }
+
+  function appendMessage(text, sender) {
+    const msg = document.createElement("div");
+    msg.classList.add("chat-msg", sender);
+    msg.innerText = text;
+    chatBody.appendChild(msg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function appendOptions(options) {
+    const container = document.createElement("div");
+    container.classList.add("chat-options");
+    
+    options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.classList.add("chat-opt-btn");
+      btn.innerText = opt.text;
+      btn.addEventListener("click", () => {
+        appendMessage(opt.text, "user");
+        container.remove(); 
+        setTimeout(() => {
+          processResponse(opt.key);
+        }, 400);
+      });
+      container.appendChild(btn);
+    });
+    
+    chatBody.appendChild(container);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+ // Procesar respuesta inteligente por palabra clave extendida al 100%
+  function processResponse(keyOrText) {
+    let responseText = "";
+    // Esta línea limpia el texto eliminando mayúsculas, acentos y diéresis automáticamente
+    const cleanText = keyOrText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    // 1. Saludos
+    if (cleanText.includes("hola") || cleanText.includes("buenos dias") || cleanText.includes("buenas tardes") || cleanText.includes("buenas noches") || cleanText.includes("que tal") || cleanText.includes("saludos") || cleanText == "hi" || cleanText == "hello") {
+      responseText = "¡Hola! ✨ Bienvenido al asistente de Salón de Belleza Glamour. ¿En qué te podemos colaborar hoy? Puedes escribir tu duda libremente o elegir una de las opciones del menú.";
+    } 
+    // 2. Coincidencias directas de botones
+    else if (botKnowledge.responses[cleanText]) {
+      responseText = botKnowledge.responses[cleanText];
+    } 
+    // 3. Servicios, Catálogo y Tipos de Uñas
+    else if (cleanText.includes("precio") || cleanText.includes("costo") || cleanText.includes("cuanto cuesta") || cleanText.includes("cuanto es") || cleanText.includes("servicio") || cleanText.includes("catalogo") || cleanText.includes("diseño") || cleanText.includes("uñas") || cleanText.includes("hacen") || cleanText.includes("acrilic") || cleanText.includes("gel") || cleanText.includes("semipermanente") || cleanText.includes("nail art") || cleanText.includes("manicure") || cleanText.includes("pedicure") || cleanText.includes("retirado")) {
+      responseText = botKnowledge.responses.servicios;
+    } 
+    // 4. Horarios y Días de apertura
+    else if (cleanText.includes("hora") || cleanText.includes("abren") || cleanText.includes("cierran") || cleanText.includes("tiempo") || cleanText.includes("sabado") || cleanText.includes("lunes") || cleanText.includes("domingo") || cleanText.includes("horario") || cleanText.includes("disponible")) {
+      responseText = botKnowledge.responses.horarios;
+    } 
+    // 5. Ubicación y Direcciones
+    else if (cleanText.includes("donde") || cleanText.includes("ubicacion") || cleanText.includes("direccion") || cleanText.includes("lugar") || cleanText.includes("tehuantepec") || cleanText.includes("como llegar") || cleanText.includes("mapa") || cleanText.includes("croquis") || cleanText.includes("quedan") || cleanText.includes("local")) {
+      responseText = botKnowledge.responses.ubicacion;
+    } 
+    // 6. Citas, Agendación y WhatsApp
+    else if (cleanText.includes("cita") || cleanText.includes("agendar") || cleanText.includes("reservar") || cleanText.includes("whatsapp") || cleanText.includes("mensaje") || cleanText.includes("telefono") || cleanText.includes("numero") || cleanText.includes("contacto") || cleanText.includes("separar")) {
+      responseText = botKnowledge.responses.cita;
+    } 
+    // 7. NUEVO: Métodos de Pago y Facturación
+    else if (cleanText.includes("pago") || cleanText.includes("pagar") || cleanText.includes("tarjeta") || cleanText.includes("efectivo") || cleanText.includes("transferencia") || cleanText.includes("aceptan") || cleanText.includes("factura") || cleanText.includes("terminal")) {
+      responseText = "Aceptamos pagos en efectivo y transferencias bancarias directas el día de tu cita. Por el momento no manejamos terminal para tarjetas de crédito o débito, ni emisión de facturas fiscales.";
+    } 
+    // 8. NUEVO: Promociones y Descuentos
+    else if (cleanText.includes("promocion") || cleanText.includes("descuento") || cleanText.includes("oferta") || cleanText.includes("paquete") || cleanText.includes("2x1") || cleanText.includes("rebaja")) {
+      responseText = "Nuestras promociones vigentes cambian cada mes. Te sugerimos visitar nuestra página de Facebook oficial o consultarlo directamente al agendar tu cita por WhatsApp para no perderte ningún beneficio.";
+    } 
+    // 9. NUEVO: Cancelaciones, Cambios de fecha o Retrasos
+    else if (cleanText.includes("cancelar") || cleanText.includes("mover") || cleanText.includes("cambiar fecha") || cleanText.includes("reprogramar") || cleanText.includes("tarde") || cleanText.includes("retardo") || cleanText.includes("asistir")) {
+      responseText = "Si necesitas reprogramar o cancelar tu cita, te pedimos nos avises con al menos 3 horas de anticipación vía WhatsApp. Contamos con una tolerancia máxima de 15 minutos de retraso para no afectar las citas de las demás clientas.";
+    } 
+    // 10. NUEVO: Garantías y Reparación de Uñas Rotas
+    else if (cleanText.includes("rompio") || cleanText.includes("se cayo") || cleanText.includes("garantia") || cleanText.includes("reparar") || cleanText.includes("reparacion") || cleanText.includes("arreglo")) {
+      responseText = "Contamos con una garantía de 4 días en tu aplicación para cualquier desprendimiento o daño de material sin costo extra. Si pasó más tiempo, realizamos la reparación de la uña dañada por un costo mínimo; escríbenos por WhatsApp para coordinar el espacio.";
+    } 
+    // 11. NUEVO: Productos y Marcas utilizadas
+    else if (cleanText.includes("marca") || cleanText.includes("material") || cleanText.includes("calidad") || cleanText.includes("quimicos") || cleanText.includes("alergia")) {
+      responseText = "Trabajamos exclusivamente con productos y marcas profesionales de alta calidad en la industria del nail art para garantizar la máxima durabilidad, brillo y protección de tus uñas naturales.";
+    } 
+    // 12. NUEVO: Agradecimientos y Despedidas
+    else if (cleanText.includes("gracias") || cleanText.includes("ok") || cleanText.includes("entendido") || cleanText.includes("perfecto") || cleanText.includes("adios") || cleanText.includes("bye") || cleanText == "thx") {
+      responseText = "¡De nada! Es un placer atenderte. Te esperamos pronto en Salón de Belleza Glamour para consentirte como te mereces. ✨💅";
+    } 
+    // Fallback si no coincide con absolutamente nada de lo anterior
+    else {
+      responseText = botKnowledge.responses.fallback;
+    }
+
+    appendMessage(responseText, "bot");
+    
+    // Remover menús de opciones previos para mantener limpio el flujo
+    const oldOptions = chatBody.querySelectorAll(".chat-options");
+    oldOptions.forEach(opt => opt.remove());
+
+    // Desplegar menú de botones guía abajo del último mensaje enviado
+    setTimeout(() => {
+      const currentOptions = chatBody.querySelector(".chat-options");
+      if (!currentOptions) {
+        appendOptions(botKnowledge.options);
+      }
+    }, 600);
+  }
+
+ // >>> ESTA ES LA FUNCIÓN QUE FALTA EN TU CÓDIGO <<<
+  function handleSend() {
+    const text = chatInput.value.trim();
+    if(!text) return;
+    
+    appendMessage(text, "user");
+    chatInput.value = "";
+    
+    const oldOptions = chatBody.querySelector(".chat-options");
+    if(oldOptions) oldOptions.remove();
+
+    setTimeout(() => {
+      processResponse(text);
+    }, 500);
+  }
+
+  chatSendBtn.addEventListener("click", handleSend);
+  chatInput.addEventListener("keypress", (e) => {
+    if(e.key === "Enter") handleSend();
+  });
+});
+</script>
+</body>
+</html>
