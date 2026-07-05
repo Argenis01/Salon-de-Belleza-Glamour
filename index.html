@@ -642,6 +642,41 @@ footer{background:var(--black);color:rgba(255,255,255,0.7);padding:70px 0 30px;}
     height: 400px;
   }
 }
+
+@media (max-width: 768px) {
+  .about-photo .badge {
+    right: 16px;
+    bottom: -30px;
+    max-width: calc(100% - 32px);
+  }
+
+  .section-head h2,
+  .about-text h2 {
+    font-size: 36px !important;
+    line-height: 1.15;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .about-photo .badge {
+    right: 10px;
+    padding: 16px 18px;
+  }
+
+  .about-photo .badge strong {
+    font-size: 28px;
+  }
+
+  .about-photo .badge span {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
 </style>
 </head>
 <body>
